@@ -14,7 +14,7 @@ describe(path.basename(__filename) + ' testing with: ' + configFile,function() {
 
   describe('readDefault',function() {
     it('should return only the \'default\' values in ' + path.basename(configFile), function (done) {
-      config.readConfig(configFile, 'default', function (err, settings) {
+      config.read(configFile, 'default', function (err, settings) {
         if (err) done(err);
 
         settings.redis.port.should.be.a('number');
@@ -34,7 +34,7 @@ describe(path.basename(__filename) + ' testing with: ' + configFile,function() {
 
   describe('readTest',function() {
     it('should return the union of the \'default\' and \'test\' objects in ' + path.basename(configFile), function (done) {
-      config.readConfig(configFile, 'test', function (err, settings) {
+      config.read(configFile, 'test', function (err, settings) {
         if (err) done(err);
 
         settings.redis.port.should.equal(6379);
@@ -50,7 +50,7 @@ describe(path.basename(__filename) + ' testing with: ' + configFile,function() {
 
   describe('readTest',function() {
     it('should return the union of the \'default\' and \'production\' objects in ' + path.basename(configFile), function (done) {
-      config.readConfig(configFile, 'production', function (err, settings) {
+      config.read(configFile, 'production', function (err, settings) {
         if (err) done(err);
 
         settings.redis.port.should.equal(6379);

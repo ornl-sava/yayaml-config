@@ -53,14 +53,14 @@ describe(path.basename(__filename) + ' testing with: ' + configFile, function() 
   describe("updateDefault", function() {
     it('should save a new value for redis.host and redis.db in the \'default\' section of ' + path.basename(configFile), function (done) {
       var config = require('..');
-      config.readConfig(configFile, 'default', function (err, settings) {
+      config.read(configFile, 'default', function (err, settings) {
         if (err) return done(err);
         settings.redis.host = '10.1.1.1';
         settings.redis.db = 2;
-        config.updateConfig(settings, configFile, 'default', function (err) {
+        config.update(settings, configFile, 'default', function (err) {
           if (err) return done(err);
           // check the updates
-          config.readConfig(configFile, 'default', function (err, newSettings) {
+          config.read(configFile, 'default', function (err, newSettings) {
             if (err) return done(err);
             newSettings.redis.host.should.equal(settings.redis.host);
             newSettings.redis.db.should.equal(settings.redis.db);
@@ -75,14 +75,14 @@ describe(path.basename(__filename) + ' testing with: ' + configFile, function() 
   describe("updateDevelopment", function() {
     it('should save a new value for redis.host and redis.db in the \'development\' section of ' + path.basename(configFile), function (done) {
       var config = require('..');
-      config.readConfig(configFile, function (err, settings) {
+      config.read(configFile, function (err, settings) {
         if (err) return done(err);
         settings.redis.host = '10.1.100.100';
         settings.redis.db = 3;
-        config.updateConfig(settings, configFile, function (err) {
+        config.update(settings, configFile, function (err) {
           if (err) return done(err);
           // check the updates
-          config.readConfig(configFile, function (err, newSettings) {
+          config.read(configFile, function (err, newSettings) {
             if (err) return done(err);
             newSettings.redis.host.should.equal(settings.redis.host);
             newSettings.redis.db.should.equal(settings.redis.db);
@@ -96,14 +96,14 @@ describe(path.basename(__filename) + ' testing with: ' + configFile, function() 
   describe("updateProduction", function() {
     it('should save a new value for redis.host and redis.db in the \'production\' section of '+ path.basename(configFile), function (done) { 
       var config = require('..');
-      config.readConfig(configFile, 'production', function (err, settings) {
+      config.read(configFile, 'production', function (err, settings) {
         if (err) return done(err);
         settings.redis.host = '10.1.50.100';
         settings.redis.db = 1;
-        config.updateConfig(settings, configFile, 'production', function (err) {
+        config.update(settings, configFile, 'production', function (err) {
           if (err) return done(err);
           // check the updates
-          config.readConfig(configFile, 'production', function (err, newSettings) {
+          config.read(configFile, 'production', function (err, newSettings) {
             if (err) return done(err);
             newSettings.redis.host.should.equal(settings.redis.host);
             newSettings.redis.db.should.equal(settings.redis.db);

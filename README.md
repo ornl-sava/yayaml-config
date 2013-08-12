@@ -1,9 +1,9 @@
-settings-node
-=============
+yaml-config-reader
+==================
 
 [Node.js](http://nodejs.org/) configuration module. The settings can be defined with [yaml](http://yaml.org/) for different environments (e.g. `production` and `development`) in a single file. Shared settings can be defined in the `default` environment. Choose the environment using `NODE_ENV`.
 
-There are several similar modules on [npm](https://npmjs.org/)[https://npmjs.org/browse/keyword/config]. This is based on [yaml-config](https://github.com/rjyo/yaml-config-node/), but this uses a more idiomatic node style.
+There are several similar modules on [npm](https://npmjs.org/browse/keyword/config). This is based on [yaml-config](https://github.com/rjyo/yaml-config-node/), but this uses a more idiomatic node style.
 
 
 ## Installation
@@ -36,9 +36,9 @@ If the environment is set to `test`, `redis.db` is set to `12`. If the environme
 
 To define the environment, set `NODE_ENV` on the command line, or set it in the code. If no environment is set `development` is assumed.
 
-    var config = require('settings')
+    var config = require('yaml-config-reader')
       , configFile = './config-example.yaml';
-    config.readConfig(configFile, function (err, settings) {
+    config.read(configFile, function (err, settings) {
       if (err) { console.error(err); return err; }
       console.log('\nSettings for default (development)');
       console.log(util.inspect(settings));
@@ -46,20 +46,20 @@ To define the environment, set `NODE_ENV` on the command line, or set it in the 
 
 The `readConfig()` function optionally takes a second parameter as enviroment name. If you do not define an environment, the `development` configuration will be loaded. For example:
 
-    config.readConfig(configFile, 'test', function (err, settings) {
+    config.read(configFile, 'test', function (err, settings) {
       if (err) { console.error(err); return err; }
       console.log(settings.redis.db);
     });
 
 The `updateConfig()` function will take current settings and save them back to the configuration file:
 
-    config.readConfig(configFile, 'production', function (err, settings) {
+    config.read(configFile, 'production', function (err, settings) {
       if (err) { console.error(err); return err; }
       console.log('\nCurrent settings for production');
       console.log(util.inspect(settings));
 
       settings.redis.host='192.168.1.2';
-      config.updateConfig(settings, configFile, 'production', function (err, newSettings) {
+      config.update(settings, configFile, 'production', function (err, newSettings) {
         if (err) { console.error(err); return err; }
         console.log('\nUpdated configuration file:');
         console.log(newSettings);
@@ -69,7 +69,7 @@ The `updateConfig()` function will take current settings and save them back to t
 
 ## License
 
-settings is freely distributable under the terms of the MIT License.
+yaml-config-reader is freely distributable under the terms of the MIT License.
 
 Copyright (c) UT-Battelle, LLC (the "Original Author")
 

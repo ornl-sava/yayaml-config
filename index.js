@@ -61,7 +61,7 @@ var _complement = function(dest, from) {
  * @param {String} env The section to be updated (optional, defaults to 'development')
  * @param {Function} callback The callback function, returns (err, settings)
  */
-var readConfig = function(file, env, callback) {
+var read = function(file, env, callback) {
   if(! fs.existsSync(file)) {
     return callback('Error: ' + file + ' does not exist.');
   }
@@ -97,7 +97,7 @@ var readConfig = function(file, env, callback) {
  * @param {String} env The section to be updated (optional, defaults to 'development')
  * @param {Function} callback The callback function, returns (err, newFileContents)
  */
-var updateConfig = function(currentSettings, file, env, callback) {
+var update = function(currentSettings, file, env, callback) {
   if(! fs.existsSync(file)) {
     return callback('Error: ' + file + ' does not exist.');
   }
@@ -139,5 +139,5 @@ var updateConfig = function(currentSettings, file, env, callback) {
 
 };
 
-module.exports.readConfig = readConfig;
-module.exports.updateConfig = updateConfig;
+module.exports.read = read;
+module.exports.update = update;

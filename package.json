@@ -1,15 +1,18 @@
 {
-    "name": "settings"
+    "name": "yaml-config-reader"
   , "version": "0.0.1"
-  , "description": "Yaml configuration for multiple environments from a single settings file"
+  , "description": "Yaml configuration reader for multiple environments from a single settings file"
   , "keywords": []
-  , "author": "John Goodall <jgoodall@gmail.com>"
+  , "author": "John Goodall <jgoodall@gmail.com> (http://jgoodall.me/)"
+  , "contributors": [
+      "Dave Richardson <daver208@gmail.com>"
+  ]
   , "scripts": {
       "test": "mocha -R spec test/*-test.js"
   }
   , "repository": {
       "type": "git"
-    , "url": "https://github.com/ornl-sava/settings.git"
+    , "url": "https://github.com/ornl-sava/yaml-config-reader.git"
   }
   , "dependencies": {
       "js-yaml": "~2.1.0"
