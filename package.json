@@ -1,0 +1,26 @@
+{
+    "name": "settings"
+  , "version": "0.0.1"
+  , "description": "Yaml configuration for multiple environments from a single settings file"
+  , "keywords": []
+  , "author": "John Goodall <jgoodall@gmail.com>"
+  , "scripts": {
+      "test": "mocha -R spec test/*-test.js"
+  }
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/ornl-sava/settings.git"
+  }
+  , "dependencies": {
+      "js-yaml": "~2.1.0"
+    }
+  , "devDependencies": {
+      "mocha": "~1.12"
+    , "chai": "~1.7"
+  }
+  , "main": "index.js"
+  , "engines": { 
+      "node" : ">=0.4.x" 
+  }
+  , "license": "MIT"
+}
