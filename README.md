@@ -1,7 +1,7 @@
-yaml-config-reader
-==================
+yayaml-config
+=============
 
-[Node.js](http://nodejs.org/) configuration module. The settings can be defined with [yaml](http://yaml.org/) for different environments (e.g. `production` and `development`) in a single file. Shared settings can be defined in the `default` environment. Choose the environment using `NODE_ENV`.
+Yet another [yaml](http://yaml.org/) configuration module for [Node.js](http://nodejs.org/). The settings can be defined with yaml for different environments (e.g. `production` and `development`) in a single file. Shared settings can be defined in the `default` environment. Choose the environment using `NODE_ENV`.
 
 There are several similar modules on [npm](https://npmjs.org/browse/keyword/config). This is based on [yaml-config](https://github.com/rjyo/yaml-config-node/), but this uses a more idiomatic node style.
 
@@ -69,7 +69,7 @@ The `updateConfig()` function will take current settings and save them back to t
 
 ## License
 
-yaml-config-reader is freely distributable under the terms of the MIT License.
+yayaml-config is freely distributable under the terms of the MIT License.
 
 Copyright (c) UT-Battelle, LLC (the "Original Author")
 
