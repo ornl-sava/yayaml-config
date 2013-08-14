@@ -2,7 +2,7 @@
     "name": "yayaml-config"
   , "version": "0.0.3"
   , "description": "Yaml configuration reader for multiple environments from a single settings file"
-  , "keywords": []
+  , "keywords": ["config", "configuration", "yaml", "settings"]
   , "author": "John Goodall <jgoodall@gmail.com> (http://jgoodall.me/)"
   , "contributors": [
       "Dave Richardson <daver208@gmail.com>"
