@@ -36,7 +36,7 @@ If the environment is set to `test`, `redis.db` is set to `12`. If the environme
 
 To define the environment, set `NODE_ENV` on the command line, or set it in the code. If no environment is set `development` is assumed.
 
-    var config = require('yaml-config-reader')
+    var config = require('yayaml-config')
       , configFile = './config-example.yaml';
     config.read(configFile, function (err, settings) {
       if (err) { console.error(err); return err; }
