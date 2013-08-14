@@ -67,6 +67,16 @@ The `updateConfig()` function will take current settings and save them back to t
     });
 
 
+## Testing
+
+To run the tests, install the dependencies and run the [mocha](http://visionmedia.github.io/mocha/) tests:
+
+    npm install -d
+    npm test
+
+The read and update tests should all pass.
+
+
 ## License
 
 yayaml-config is freely distributable under the terms of the MIT License.
