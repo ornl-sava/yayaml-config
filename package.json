@@ -1,6 +1,6 @@
 {
     "name": "yayaml-config"
-  , "version": "0.0.1"
+  , "version": "0.0.2"
   , "description": "Yaml configuration reader for multiple environments from a single settings file"
   , "keywords": []
   , "author": "John Goodall <jgoodall@gmail.com> (http://jgoodall.me/)"
