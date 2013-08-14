@@ -8,7 +8,7 @@ There are several similar modules on [npm](https://npmjs.org/browse/keyword/conf
 
 ## Installation
 
-Clone the repo until this is put in npm registry.
+    npm install yayaml-config
 
 
 ## Defining settings
